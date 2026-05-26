@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "1", "name": "فستان زفاف الأميرة", "description": "فستان أميرة بذيل طويل وتاج كرستال",
+    "price": 5500, "discountPrice": 4800, "category": "زفاف", "inStock": true, "featured": true, "isNew": true, "isOnSale": true, "sortOrder": 0,
+    "images": ["https://placehold.co/600x800/391925/FFEAD4?text=فستان+أميرة"], "colors": [{"name": "أبيض", "hex": "#FFFFFF"}, {"name": "عاجي", "hex": "#FFFFF0"}],
+    "sizes": [{"size": "XS", "stock": 1}, {"size": "S", "stock": 2}, {"size": "M", "stock": 2}],
+    "material": "ساتان", "createdAt": "2026-01-15T00:00:00Z"
+  },
+  {
+    "_id": "2", "name": "فستان زفاف فيرا", "description": "فستان زفاف فاخر بقصة أميراتية وتطريز يدوي",
+    "price": 2500, "discountPrice": 1999, "category": "زفاف", "inStock": true, "featured": true, "isNew": true, "sortOrder": 1,
+    "images": ["https://placehold.co/600x800/FFEAD4/391925?text=فستان+فيرا"], "colors": [{"name": "أبيض", "hex": "#FFFFFF"}, {"name": "شامبين", "hex": "#F7E7CE"}],
+    "sizes": [{"size": "S", "stock": 2}, {"size": "M", "stock": 3}, {"size": "L", "stock": 1}],
+    "material": "دانتيل", "createdAt": "2026-02-10T00:00:00Z"
+  },
+  {
+    "_id": "3", "name": "فستان سهرة Royal", "description": "فستان سهرة أنيق بألوان Royal وتصميم عصري",
+    "price": 1500, "category": "سهرة", "inStock": true, "featured": true, "sortOrder": 2,
+    "images": ["https://placehold.co/600x800/c9a87c/391925?text=سهرة+Royal"], "colors": [{"name": "ذهبي", "hex": "#C9A87C"}, {"name": "أسود", "hex": "#000000"}],
+    "sizes": [{"size": "S", "stock": 5}, {"size": "M", "stock": 4}],
+    "material": "مخمل", "createdAt": "2026-02-20T00:00:00Z"
+  },
+  {
+    "_id": "4", "name": "فستان خطوبة ناعم", "description": "فستان خطوبة بتصميم ناعم ورومانسي مع دانتيل فاخر",
+    "price": 1800, "category": "خطوبة", "inStock": true, "isNew": true, "sortOrder": 3,
+    "images": ["https://placehold.co/600x800/391925/c9a87c?text=خطوبة+ناعم"], "colors": [{"name": "وردي", "hex": "#FFC0CB"}],
+    "sizes": [{"size": "M", "stock": 2}, {"size": "L", "stock": 2}],
+    "material": "دانتيل", "createdAt": "2026-03-01T00:00:00Z"
+  },
+  {
+    "_id": "5", "name": "فستان زفاف كلاسيك", "description": "فستان كلاسيك أنيق بصدرية مطرزة باللؤلؤ",
+    "price": 3200, "category": "زفاف", "inStock": true, "featured": true, "sortOrder": 4,
+    "images": ["https://placehold.co/600x800/FFEAD4/c9a87c?text=كلاسيك"], "colors": [{"name": "أبيض", "hex": "#FFFFFF"}],
+    "sizes": [{"size": "XS", "stock": 1}, {"size": "S", "stock": 2}, {"size": "M", "stock": 2}],
+    "material": "ساتان", "createdAt": "2026-03-10T00:00:00Z"
+  },
+  {
+    "_id": "6", "name": "فستان فوني Royal", "description": "فستان فوني فاخر بتطريز يدوي ذهبي",
+    "price": 4500, "discountPrice": 3800, "category": "fony", "inStock": true, "featured": true, "isOnSale": true, "sortOrder": 5,
+    "images": ["https://placehold.co/600x800/c9a87c/FFEAD4?text=فوني+Royal"], "colors": [{"name": "ذهبي", "hex": "#FFD700"}],
+    "sizes": [{"size": "S", "stock": 1}, {"size": "M", "stock": 1}],
+    "material": "تول", "createdAt": "2026-03-15T00:00:00Z"
+  },
+  {
+    "_id": "7", "name": "فستان سهرة قصير", "description": "فستان سهرة قصير أنيق للحفلات والمناسبات",
+    "price": 899, "category": "سهرة", "inStock": true, "isOnSale": true, "sortOrder": 6,
+    "images": ["https://placehold.co/600x800/391925/FFEAD4?text=سهرة+قصير"], "colors": [{"name": "أزرق", "hex": "#4A90D9"}, {"name": "أخضر", "hex": "#5CB85C"}],
+    "sizes": [{"size": "S", "stock": 6}, {"size": "M", "stock": 5}, {"size": "L", "stock": 4}],
+    "material": "شيفون", "createdAt": "2026-03-20T00:00:00Z"
+  },
+  {
+    "_id": "8", "name": "فستان خطوبة Golf", "description": "فستان خطوبة بتصميم مفتوح من الخلف مع قصة عصرية",
+    "price": 2200, "category": "خطوبة", "inStock": true, "sortOrder": 7,
+    "images": ["https://placehold.co/600x800/FFEAD4/391925?text=خطوبة+Golf"], "colors": [{"name": "أبيض", "hex": "#FFFFFF"}, {"name": "شامبين", "hex": "#F7E7CE"}],
+    "sizes": [{"size": "S", "stock": 3}, {"size": "M", "stock": 3}, {"size": "L", "stock": 2}],
+    "material": "ساتان", "createdAt": "2026-04-01T00:00:00Z"
+  }
+]

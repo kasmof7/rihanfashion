@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>فساتين الزفاف - Rihan Fashion</title>
+  <link rel="icon" href="../logo_without_text.png">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="dresses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dresses-page">
+  <div class="loader">
+    <div class="loader-content">
+      <img src="../logo.png" alt="Rihan Fashion" class="loader-logo">
+    </div>
+  </div>
+
+  <section class="dresses-hero container">
+    <div class="hero-top">
+      <a href="../index.html" class="back-btn"><i class="fas fa-arrow-right"></i> الرئيسية</a>
+    </div>
+    <h1 class="dresses-title">فساتين الزفاف</h1>
+    <p class="subtitle">تشكيلة حصرية لعرسان 2026</p>
+  </section>
+
+  <div class="container">
+    <div class="toolbar">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="ابحث عن فستان..." />
+      </div>
+      
+      <div class="toolbar-actions">
+        <button id="viewToggle" class="view-toggle" title="تغيير طريقة العرض">
+          <i class="fas fa-th-large"></i>
+        </button>
+        <button id="filterToggle" class="filter-toggle">
+          <i class="fas fa-filter"></i>
+          <span class="filter-count"></span>
+        </button>
+      </div>
+    </div>
+    
+    <div id="filtersPanel" class="filters-panel">
+      <div class="filter-row">
+        <select id="categoryFilter" class="filter-select">
+          <option value="">الكل</option>
+          <option value="زفاف">فساتين زفاف</option>
+          <option value="سهرة">فساتين سهرة</option>
+          <option value="خطوبة">فساتين خطوبة</option>
+          <option value="fony">فساتين فوني</option>
+        </select>
+        
+        <select id="sortFilter" class="filter-select">
+          <option value="">الترتيب</option>
+          <option value="price_asc">السعر: من الأقل</option>
+          <option value="price_desc">السعر: من الأعلى</option>
+          <option value="newest">الأحدث</option>
+          <option value="name_asc">الاسم: أ-ي</option>
+        </select>
+      </div>
+      
+      <div class="filter-row checkbox-row">
+        <label class="checkbox-label">
+          <input type="checkbox" id="inStockFilter" />
+          <span>المتوفر فقط</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="newFilter" />
+          <span>الجديد</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="saleFilter" />
+          <span>التخفيضات</span>
+        </label>
+      </div>
+      
+      <button class="btn-reset" onclick="resetFilters()">إعادة تعيين</button>
+    </div>
+    
+    <p class="results-count"></p>
+  </div>
+
+  <section class="dresses-grid container" aria-label="قوائم الفساتين">
+  </section>
+
+  <div class="pagination"></div>
+
+  <footer class="main-footer">
+    <div class="container" style="max-width: 800px; margin: 0 auto;">
+      <p class="footer-copy">حقوق النشر © Rihan Fashion</p>
+    </div>
+  </footer>
+
+  <div id="bookingModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('bookingModal')">&times;</button>
+      <h2>احجز استشارة مجانية</h2>
+      <p>املأ البيانات وسيتم التواصل معك عبر واتساب</p>
+      <form id="bookingForm">
+        <input type="hidden" id="bookingDressId" name="dressId" />
+        <div class="form-group">
+          <label>الاسم</label>
+          <input type="text" name="name" required />
+        </div>
+        <div class="form-group">
+          <label>رقم الواتساب</label>
+          <input type="tel" name="phone" required dir="ltr" />
+        </div>
+        <div class="form-group">
+          <label>تاريخ المناسبة</label>
+          <input type="date" name="eventDate" required />
+        </div>
+        <div class="form-group">
+          <label>ملاحظات</label>
+          <textarea name="notes" rows="2"></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full">إرسال الطلب</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="dressDetailsModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('dressDetailsModal')">&times;</button>
+      <div class="detail-header">
+        <div class="detail-image"></div>
+        <div class="detail-meta">
+          <h2 class="detail-name"></h2>
+          <div class="detail-price"></div>
+        </div>
+      </div>
+      <p class="detail-desc"></p>
+      <div class="detail-colors">
+        <strong>الألوان: </strong>
+        <div class="color-badges"></div>
+      </div>
+      <div class="detail-sizes">
+        <strong>المقاسات: </strong>
+      </div>
+      <button class="btn-primary btn-full" onclick="bookFromDetails()">احجز استشارة مجانية</button>
+    </div>
+  </div>
+
+  <script src="../shared/sample-dresses.js"></script>
+  <script src="../shared/booking.js"></script>
+  <script>const SAMPLE_DATA_PATH = '../data/sample-dresses.json';</script>
+  <script src="dresses.js?reload=7"></script>
+</body>
+</html>

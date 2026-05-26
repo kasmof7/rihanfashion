@@ -1,0 +1,482 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--dark-color) 0%, var(--light-color) 100%);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+.loader.hidden { opacity: 0; visibility: hidden; }
+
+.loader-content { text-align: center; }
+
+.loader-logo { width: 80px; animation: pulse 1.5s ease-in-out infinite; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.dresses-page { 
+  background: var(--bg-light); 
+  min-height: 100vh; 
+  overflow-x: hidden;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dresses-hero { 
+  padding: 15px; 
+  text-align: center; 
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.hero-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.dresses-title { 
+  font-family: 'Kufi', 'Scheherazade New', serif; 
+  font-size: 20px; 
+  margin: 8px 0 4px; 
+  color: var(--dark-color); 
+}
+
+.subtitle { 
+  font-family: 'Scheherazade New', serif; 
+  color: var(--text-light); 
+  font-size: 13px; 
+}
+
+.toolbar { 
+  display: flex; 
+  gap: 8px; 
+  padding: 0 12px 12px; 
+  align-items: center; 
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.search-box { 
+  flex: 1; 
+  position: relative; 
+}
+
+.search-box i { 
+  position: absolute; 
+  right: 12px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  color: var(--text-light); 
+  font-size: 13px; 
+}
+
+.search-box input { 
+  width: 100%; 
+  padding: 10px 35px 10px 12px; 
+  border: 1px solid var(--border-color); 
+  border-radius: 20px; 
+  font-family: 'Scheherazade New', serif; 
+  font-size: 13px; 
+  background: #fff; 
+}
+
+.search-box input:focus { 
+  outline: none; 
+  border-color: var(--accent-color); 
+}
+
+.toolbar-actions { display: flex; gap: 6px; }
+
+.view-toggle, .filter-toggle { 
+  width: 36px; 
+  height: 36px; 
+  border-radius: 50%; 
+  border: 1px solid var(--border-color); 
+  background: #fff; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer; 
+  color: var(--dark-color); 
+  font-size: 14px;
+}
+
+.filter-count { 
+  position: absolute; 
+  top: -5px; 
+  right: -5px; 
+  width: 16px; 
+  height: 16px; 
+  background: #e74c3c; 
+  color: #fff; 
+  border-radius: 50%; 
+  font-size: 9px; 
+  display: none; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.filters-panel { 
+  display: none; 
+  padding: 12px; 
+  background: #fff; 
+  border-radius: 12px; 
+  margin: 0 12px 12px; 
+  box-shadow: var(--shadow); 
+}
+
+.filters-panel.open { display: block; }
+
+.filter-row { 
+  display: flex; 
+  gap: 8px; 
+  margin-bottom: 8px; 
+  flex-wrap: wrap;
+}
+
+.filter-select { 
+  flex: 1; 
+  min-width: 120px;
+  padding: 8px 10px; 
+  border: 1px solid var(--border-color); 
+  border-radius: 6px; 
+  font-family: 'Scheherazade New', serif; 
+  font-size: 12px; 
+  background: #fff; 
+}
+
+.btn-reset {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: 'Scheherazade New', serif;
+  font-size: 12px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.checkbox-row { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+}
+
+.checkbox-label { 
+  display: flex; 
+  align-items: center; 
+  gap: 5px; 
+  font-family: 'Scheherazade New', serif; 
+  font-size: 12px; 
+  color: var(--text-color); 
+  cursor: pointer; 
+}
+
+.checkbox-label input[type="checkbox"] { width: 16px; height: 16px; }
+
+.results-count { 
+  text-align: center; 
+  font-family: 'Scheherazade New', serif; 
+  color: var(--text-light); 
+  font-size: 12px; 
+  padding: 8px 12px; 
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.dresses-grid { 
+  display: grid; 
+  gap: 10px; 
+  padding: 0 10px 20px; 
+  animation: fadeInUp 0.6s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.dresses-grid.grid { grid-template-columns: repeat(2, 1fr); }
+.dresses-grid.list { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+
+.dress-card { 
+  background: #fff; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05); 
+}
+
+.dress-image-wrapper { 
+  position: relative; 
+  overflow: hidden; 
+  background: #f5f5f5; 
+}
+
+.grid-view .dress-image-wrapper { aspect-ratio: 3/4; }
+.list-view .dress-image-wrapper { width: 100px; flex-shrink: 0; aspect-ratio: 3/4; }
+
+.dress-image-wrapper img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.dress-badge { 
+  position: absolute; 
+  top: 6px; 
+  padding: 3px 8px; 
+  border-radius: 4px; 
+  font-family: 'Scheherazade New', serif; 
+  font-size: 9px; 
+  font-weight: 700; 
+}
+
+.dress-badge.new { right: 6px; background: var(--dark-color); color: #fff; }
+.dress-badge.sale { left: 6px; background: #e74c3c; color: #fff; }
+.dress-badge.out { left: 6px; background: #95a5a6; color: #fff; }
+
+.dress-info { padding: 10px; }
+.list-view .dress-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+.dress-name { 
+  font-family: 'Scheherazade New', serif; 
+  font-size: 12px; 
+  font-weight: 600; 
+  margin-bottom: 3px; 
+  color: var(--dark-color); 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.list-view .dress-name { white-space: normal; }
+
+.dress-desc { 
+  font-family: 'Scheherazade New', serif; 
+  color: var(--text-light); 
+  font-size: 11px; 
+  margin-bottom: 6px; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  overflow: hidden; 
+}
+
+.dress-price .original-price { 
+  text-decoration: line-through; 
+  color: #999; 
+  font-size: 10px; 
+  margin-right: 4px; 
+}
+
+.dress-price .current-price { 
+  color: var(--accent-color); 
+  font-weight: 700; 
+  font-size: 12px; 
+}
+
+.dress-actions { display: flex; gap: 5px; margin-top: 6px; }
+
+.dress-actions .btn-primary, 
+.dress-actions .btn-secondary { 
+  flex: 1; 
+  padding: 6px 8px; 
+  font-size: 10px; 
+  border-radius: 5px; 
+}
+
+.dress-actions .btn-primary { 
+  background: var(--accent-color); 
+  color: var(--dark-color); 
+  border: none; 
+  font-weight: 600; 
+}
+
+.dress-actions .btn-secondary { 
+  background: transparent; 
+  color: var(--dark-color); 
+  border: 1px solid var(--dark-color); 
+}
+
+.loading, .no-results { 
+  grid-column: 1 / -1; 
+  text-align: center; 
+  padding: 40px 20px; 
+  color: var(--text-light); 
+}
+
+.loading i { font-size: 24px; margin-bottom: 10px; }
+
+.pagination { 
+  display: flex; 
+  justify-content: center; 
+  gap: 5px; 
+  margin: 15px 0; 
+  flex-wrap: wrap; 
+  padding: 0 10px; 
+}
+
+.page-btn { 
+  min-width: 32px; 
+  height: 32px; 
+  border: 1px solid var(--border-color); 
+  background: #fff; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  font-family: 'Scheherazade New', serif; 
+  font-size: 12px;
+}
+
+.page-btn:hover, .page-btn.active { 
+  background: var(--dark-color); 
+  color: #fff; 
+  border-color: var(--dark-color); 
+}
+
+.detail-header { display: flex; gap: 12px; margin-bottom: 12px; }
+.detail-image { width: 90px; height: 110px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+.detail-image img { width: 100%; height: 100%; object-fit: cover; }
+.detail-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.detail-name { font-size: 14px; margin-bottom: 5px; }
+
+.detail-desc { 
+  font-family: 'Scheherazade New', serif; 
+  font-size: 12px; 
+  color: var(--text-color); 
+  margin-bottom: 12px; 
+  line-height: 1.5; 
+}
+
+.detail-colors { margin-bottom: 12px; }
+.detail-colors strong, .detail-sizes strong { 
+  font-family: 'Scheherazade New', serif; 
+  font-size: 11px; 
+  display: block; 
+  margin-bottom: 6px; 
+}
+
+.color-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.color-badge { 
+  width: 24px; 
+  height: 24px; 
+  border-radius: 50%; 
+  border: 1px solid var(--border-color); 
+  font-size: 9px; 
+}
+
+.size-badge { display: inline-block; padding: 4px 10px; margin: 3px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 11px; }
+.size-badge.out-ofStock { opacity: 0.4; }
+
+.footer-copy { color: #ccc; font-size: 11px; text-align: center; }
+.back-btn { 
+  padding: 6px 12px; 
+  background: #c9a87c; 
+  color: #391925; 
+  border-radius: 15px; 
+  text-decoration: none; 
+  font-weight: 700; 
+  font-size: 12px; 
+}
+
+.main-footer { 
+  padding: 20px 15px; 
+  background: linear-gradient(180deg, var(--dark-color), #2a1520); 
+  color: var(--white); 
+}
+
+.main-footer .container { max-width: 800px; margin: 0 auto; }
+
+@media (min-width: 375px) {
+  .dresses-title { font-size: 22px; }
+  .subtitle { font-size: 14px; }
+  .search-box input { padding: 11px 38px 11px 14px; }
+  .view-toggle, .filter-toggle { width: 40px; height: 40px; }
+  .dress-name { font-size: 13px; }
+  .dress-desc { font-size: 11px; }
+  .dress-price .current-price { font-size: 13px; }
+  .dress-actions .btn-primary, .dress-actions .btn-secondary { padding: 7px 10px; font-size: 11px; }
+}
+
+@media (min-width: 414px) {
+  .dresses-grid { gap: 12px; padding: 0 12px 25px; }
+  .dress-info { padding: 12px; }
+}
+
+@media (min-width: 768px) {
+  .dresses-hero { padding: 20px; }
+  .dresses-title { font-size: 26px; }
+  .subtitle { font-size: 15px; }
+  
+  .toolbar { 
+    padding: 0 20px 20px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  
+  .search-box input { 
+    padding: 12px 42px 12px 16px; 
+    font-size: 14px; 
+    border-radius: 25px; 
+  }
+  
+  .filters-panel { 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    right: 0; 
+    background: #fff; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    padding: 15px 20px; 
+    flex-wrap: wrap;
+  }
+  
+  .filters-panel { display: flex; gap: 12px; background: transparent; box-shadow: none; padding: 0 20px 20px; position: static; }
+  .filter-row { flex: 1; margin-bottom: 0; }
+  .filter-select { min-width: 140px; }
+  .filter-toggle { display: none; }
+  
+  .results-count, .pagination { max-width: 800px; margin: 0 auto; }
+  .dresses-grid { max-width: 800px; margin: 0 auto; gap: 15px; }
+  
+  .dresses-grid.grid { grid-template-columns: repeat(3, 1fr); }
+  .dresses-grid.list { grid-template-columns: 1fr; max-width: 550px; }
+  .list-view .dress-card { display: flex; }
+  
+  .dress-name { font-size: 14px; }
+  .dress-desc { font-size: 12px; }
+  .dress-actions .btn-primary, .dress-actions .btn-secondary { padding: 8px 12px; font-size: 12px; }
+  
+  .modal-overlay { align-items: center; padding: 20px; }
+  .modal-content { max-width: 400px; border-radius: 14px; }
+  .detail-header { flex-direction: column; }
+  .detail-image { width: 100%; height: 220px; }
+  .detail-meta { text-align: center; }
+  .dress-meta { flex-direction: row; }
+  .dress-actions { flex: 0 0 auto; }
+}
+
+@media (min-width: 1024px) {
+  .dresses-grid.grid { grid-template-columns: repeat(4, 1fr); }
+  .dresses-grid { gap: 20px; padding: 0 20px 30px; }
+  .filter-select { min-width: 160px; }
+}
+
+@media (max-width: 320px) {
+  .dresses-grid.grid { gap: 8px; }
+  .dress-info { padding: 8px; }
+  .dress-name { font-size: 11px; }
+  .dress-desc { font-size: 10px; -webkit-line-clamp: 1; }
+  .dress-price .current-price { font-size: 11px; }
+  .dress-actions .btn-primary, .dress-actions .btn-secondary { padding: 5px 6px; font-size: 9px; }
+}

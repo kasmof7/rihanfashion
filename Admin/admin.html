@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم - Rihan Fashion</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <h1>لوحة التحكم</h1>
+      <p>Rihan Fashion</p>
+      <form id="loginForm">
+        <input type="text" id="loginUser" placeholder="اسم المستخدم" required>
+        <input type="password" id="loginPass" placeholder="كلمة السر" required>
+        <p id="loginError" class="error-msg"></p>
+        <button type="submit">دخول</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="dashboardScreen" class="dashboard-screen" style="display:none;">
+    <header class="dash-header">
+      <h2>لوحة التحكم</h2>
+      <button id="logoutBtn" class="btn-logout">تسجيل خروج</button>
+    </header>
+
+    <div class="dash-toolbar">
+      <button id="showAddForm" class="btn-add">+ إضافة فستان جديد</button>
+    </div>
+
+    <div id="addForm" class="dress-form" style="display:none;">
+      <h3>إضافة / تعديل فستان</h3>
+      <form id="dressForm">
+        <input type="hidden" id="editId">
+        <div class="form-row">
+          <input type="text" id="dName" placeholder="اسم الفستان" required>
+        </div>
+        <div class="form-row">
+          <textarea id="dDesc" placeholder="وصف الفستان" rows="2"></textarea>
+        </div>
+        <div class="form-row">
+          <input type="number" id="dPrice" placeholder="السعر" min="1" step="1" required>
+          <input type="number" id="dDiscount" placeholder="سعر التخفيض (اختياري)" min="0" step="1">
+        </div>
+        <p id="priceError" class="field-error"></p>
+        <div class="form-row">
+          <input type="text" id="dCategory" placeholder="التصنيف (زفاف/سهرة/خطوبة/fony)">
+          <input type="text" id="dMaterial" placeholder="الخامة">
+        </div>
+        <div class="form-row">
+          <div class="image-upload-area">
+            <label class="upload-btn">
+              <i class="upload-icon"><i class="fas fa-camera"></i></i>
+              <span>اختر صور (متعدد)</span>
+              <input type="file" id="dImageFile" accept="image/*" multiple>
+            </label>
+            <p class="upload-hint">يمكنك اختيار أكثر من صورة في مرة واحدة</p>
+            <div id="imagePreview" class="image-preview"></div>
+          </div>
+        </div>
+        <div class="form-row checkboxes">
+          <label><input type="checkbox" id="dFeatured"> مميز</label>
+          <label><input type="checkbox" id="dNew"> جديد</label>
+          <label><input type="checkbox" id="dSale"> تخفيض</label>
+          <label><input type="checkbox" id="dStock" checked> متوفر</label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-save">حفظ</button>
+          <button type="button" id="cancelForm" class="btn-cancel">إلغاء</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="dash-table-wrap">
+      <div id="loadingDresses" class="table-loading">جاري التحميل...</div>
+      <table id="dressesTable">
+        <thead>
+          <tr>
+            <th>الصورة</th>
+            <th>الاسم</th>
+            <th>السعر</th>
+            <th>التصنيف</th>
+            <th class="th-hide">مميز</th>
+            <th class="th-hide">جديد</th>
+            <th class="th-hide">تخفيض</th>
+            <th class="th-hide">متوفر</th>
+            <th>إجراءات</th>
+          </tr>
+        </thead>
+        <tbody id="dressesBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
